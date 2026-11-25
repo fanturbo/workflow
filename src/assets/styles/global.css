@@ -1,0 +1,219 @@
+@import './tokens.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  background-color: var(--color-background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
+
+#app {
+  display: flex;
+}
+
+#app > .n-config-provider {
+  width: 100%;
+  min-width: 0;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-primary-hover);
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid rgba(79, 70, 229, 0.35);
+  outline-offset: 2px;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* 滚动条 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-tertiary);
+}
+
+/* 通用工具类 */
+.text-secondary {
+  color: var(--color-text-secondary);
+}
+
+.text-tertiary {
+  color: var(--color-text-tertiary);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.gap-sm {
+  gap: var(--spacing-sm);
+}
+
+.gap-md {
+  gap: var(--spacing-md);
+}
+
+.gap-lg {
+  gap: var(--spacing-lg);
+}
+
+.mt-sm { margin-top: var(--spacing-sm); }
+.mt-md { margin-top: var(--spacing-md); }
+.mt-lg { margin-top: var(--spacing-lg); }
+.mb-sm { margin-bottom: var(--spacing-sm); }
+.mb-md { margin-bottom: var(--spacing-md); }
+.mb-lg { margin-bottom: var(--spacing-lg); }
+
+/* 空状态 */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xl) var(--spacing-lg);
+  color: var(--color-text-tertiary);
+  text-align: center;
+}
+
+.empty-state-icon {
+  font-size: 32px;
+  margin-bottom: var(--spacing-md);
+  opacity: 0.4;
+}
+
+.empty-state-text {
+  font-size: var(--font-size-sm);
+}
+
+/* 渐入动画 */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity var(--transition-base);
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: transform var(--transition-base), opacity var(--transition-base);
+}
+
+.slide-enter-from {
+  transform: translateX(20px);
+  opacity: 0;
+}
+
+.slide-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
+}
+
+/* NMessage 覆盖 */
+.n-message {
+  font-family: var(--font-family) !important;
+}
+
+/* Shared page rhythm */
+.page-title {
+  color: var(--color-text);
+  font-size: 24px;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.add-btn,
+.export-btn {
+  min-height: 38px;
+  padding: 0 16px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+}
+
+.add-btn:hover,
+.export-btn:hover {
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .page-title {
+    font-size: 21px;
+  }
+}

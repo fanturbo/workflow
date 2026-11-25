@@ -1,0 +1,50 @@
+{
+  "name": "workflow",
+  "version": "1.0.0",
+  "description": "WorkFlow - 通用型个人工作管理系统",
+  "license": "MIT",
+  "author": "会飞的蜗牛",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-github-username/workflow.git"
+  },
+  "keywords": [
+    "workflow",
+    "task-management",
+    "vue3",
+    "typescript",
+    "pinia",
+    "dexie",
+    "naive-ui"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "type-check": "vue-tsc --noEmit",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "dependencies": {
+    "@vueuse/core": "^12.5.0",
+    "dayjs": "^1.11.13",
+    "dexie": "^4.0.11",
+    "echarts": "^5.6.0",
+    "naive-ui": "^2.41.0",
+    "pinia": "^2.3.1",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0",
+    "vuedraggable": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.0",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "fake-indexeddb": "^6.2.7",
+    "typescript": "^5.7.3",
+    "vite": "^6.1.0",
+    "vue-tsc": "^2.2.0"
+  }
+}

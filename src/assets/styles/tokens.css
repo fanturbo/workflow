@@ -1,0 +1,232 @@
+/**
+ * WorkFlow 设计 Token
+ * Minimal 极简风格，参考 Linear、Things 3
+ */
+
+:root {
+  /* 让浏览器原生控件（日期选择器、滚动条、下拉箭头）跟随主题 */
+  color-scheme: light;
+
+  /* 品牌色 */
+  --color-primary: #4F46E5;
+  --color-primary-hover: #4338CA;
+  --color-primary-light: #EEF2FF;
+
+  /* 背景 */
+  --color-background: #FFFFFF;
+  --color-surface: #F4F6F8;
+  --color-surface-hover: #ECEFF3;
+
+  /* 文字 */
+  --color-text: #172033;
+  --color-text-secondary: #647087;
+  --color-text-tertiary: #98A2B3;
+
+  /* 边框 */
+  --color-border: #DDE2E9;
+  --color-border-light: #E9EDF2;
+
+  /* 语义色 */
+  --color-success: #16A34A;
+  --color-success-light: #DCFCE7;
+  --color-warning: #D97706;
+  --color-warning-light: #FEF3C7;
+  --color-danger: #DC2626;
+  --color-danger-light: #FEE2E2;
+  --color-info: #4F6EF7;
+  --color-info-light: #DBEAFE;
+
+  /* 侧边栏（亮色：白底深字） */
+  --sidebar-bg: #FFFFFF;
+  --sidebar-border: #E9EDF2;
+  --sidebar-text: #647087;
+  --sidebar-text-strong: #172033;
+  --sidebar-hover-bg: #F4F6F8;
+  --sidebar-active-bg: #EEF2FF;
+  --sidebar-active-text: #4F46E5;
+  --sidebar-logo-text: #172033;
+  --sidebar-chip-bg: #FFFFFF;
+  --sidebar-chip-border: #DDE2E9;
+  --sidebar-toggle-bg: #F4F6F8;
+  --sidebar-toggle-hover-bg: #ECEFF3;
+  --sidebar-toggle-text: #647087;
+  --sidebar-shadow: 18px 0 48px rgba(15, 23, 42, 0.12);
+
+  /* 工作台区块上的白色半透明叠层（暗色下改为低透明度） */
+  --block-overlay: rgba(255, 255, 255, 0.72);
+  --block-overlay-strong: rgba(255, 255, 255, 0.9);
+  --block-overlay-soft: rgba(255, 255, 255, 0.32);
+  --block-card: rgba(255, 255, 255, 0.56);
+  --block-card-hover: rgba(255, 255, 255, 0.9);
+  --block-ghost: rgba(255, 255, 255, 0.4);
+
+  /* 图表配色（ECharts 读取，见 ReviewView.vue） */
+  --chart-text: #64748B;
+  --chart-axis: #E2E8F0;
+  --chart-split: #F1F5F9;
+  --chart-tooltip-bg: #FFFFFF;
+  --chart-tooltip-border: #E2E8F0;
+  --chart-created: #4F6EF7;
+  --chart-created-area: #4F6EF720;
+  --chart-completed: #16A34A;
+  --chart-completed-area: #16A34A20;
+
+  /* 圆角 */
+  --radius-sm: 7px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 16px;
+
+  /* 布局 */
+  --sidebar-width: 240px;
+  --sidebar-collapsed-width: 72px;
+  --header-height: 64px;
+
+  /* 间距 */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+
+  /* 字体 */
+  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC',
+    'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Arial, sans-serif;
+  --font-size-xs: 12px;
+  --font-size-sm: 13px;
+  --font-size-base: 14px;
+  --font-size-lg: 16px;
+  --font-size-xl: 18px;
+  --font-size-2xl: 24px;
+  --font-size-3xl: 30px;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* 阴影 */
+  --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.04);
+  --shadow-md: 0 8px 24px rgba(16, 24, 40, 0.06);
+  --shadow-lg: 0 18px 48px rgba(16, 24, 40, 0.12);
+
+  /* 动画 */
+  --transition-fast: 150ms ease;
+  --transition-base: 200ms ease;
+  --transition-slow: 300ms ease;
+
+  /* z-index */
+  --z-header: 100;
+  --z-sidebar: 200;
+  --z-drawer: 1000;
+  --z-modal: 1100;
+  --z-message: 1200;
+}
+
+/* 暗色主题 */
+.dark {
+  /* 原生控件同步转暗，否则 <input type="date"> / 滚动条仍是白底 */
+  color-scheme: dark;
+
+  --color-background: #161B27;
+  --color-surface: #1E2535;
+  --color-surface-hover: #252D40;
+  --color-text: #E8EDFB;
+  --color-text-secondary: #8B95AE;
+  --color-text-tertiary: #5A6480;
+  --color-border: #2C3550;
+  --color-border-light: #232B3E;
+  --color-primary-light: #1E2535;
+  --color-primary: #6366F1;
+  --color-primary-hover: #818CF8;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 18px 48px rgba(0, 0, 0, 0.5);
+
+  /* 侧边栏（暗色：深底浅字） */
+  --sidebar-bg: #121724;
+  --sidebar-border: #232B3E;
+  --sidebar-text: #8B95AE;
+  --sidebar-text-strong: #E8EDFB;
+  --sidebar-hover-bg: #1E2535;
+  --sidebar-active-bg: #252C48;
+  --sidebar-active-text: #A5B4FC;
+  --sidebar-logo-text: #E8EDFB;
+  --sidebar-chip-bg: #1E2535;
+  --sidebar-chip-border: #2C3550;
+  --sidebar-toggle-bg: #1E2535;
+  --sidebar-toggle-hover-bg: #252D40;
+  --sidebar-toggle-text: #8B95AE;
+  --sidebar-shadow: 18px 0 48px rgba(0, 0, 0, 0.45);
+
+  /* 区块叠层：暗色下用极低透明度白，避免亮块 */
+  --block-overlay: rgba(255, 255, 255, 0.06);
+  --block-overlay-strong: rgba(255, 255, 255, 0.1);
+  --block-overlay-soft: rgba(255, 255, 255, 0.04);
+  --block-card: rgba(255, 255, 255, 0.045);
+  --block-card-hover: rgba(255, 255, 255, 0.09);
+  --block-ghost: rgba(255, 255, 255, 0.05);
+
+  /* 图表配色（ECharts 读取，见 ReviewView.vue） */
+  --chart-text: #8B95AE;
+  --chart-axis: #2C3550;
+  --chart-split: #232B3E;
+  --chart-tooltip-bg: #1E2535;
+  --chart-tooltip-border: #2C3550;
+  --chart-created: #818CF8;
+  --chart-created-area: #6366F133;
+  --chart-completed: #34D399;
+  --chart-completed-area: #34D39933;
+}
+
+/* ===== 工作台区块配色 =====
+   全局定义：亮色规则 (0,1,0)，暗色规则 (0,2,0) 精确覆盖，
+   避免 SFC scoped 里 :global(.dark) 被编译器降级后变量失效 */
+.dashboard-block {
+  --block-accent: #6366F1;
+  --block-bg: #F1F2FF;
+  --block-border: #DEE0FF;
+}
+
+.block-this_week {
+  --block-accent: #0284C7;
+  --block-bg: #EFF9FF;
+  --block-border: #D6EEFC;
+}
+
+.block-long_term {
+  --block-accent: #D97706;
+  --block-bg: #FFF8E8;
+  --block-border: #F8E6BA;
+}
+
+.block-daily_routine {
+  --block-accent: #059669;
+  --block-bg: #ECFDF5;
+  --block-border: #CFF4E1;
+}
+
+/* 暗色：低饱和深色底 + 提亮的强调色，保留色相区分 */
+.dark .block-must_finish_today {
+  --block-accent: #818CF8;
+  --block-bg: #20233B;
+  --block-border: #2E3358;
+}
+
+.dark .block-this_week {
+  --block-accent: #38BDF8;
+  --block-bg: #1C2C3B;
+  --block-border: #284155;
+}
+
+.dark .block-long_term {
+  --block-accent: #FBBF24;
+  --block-bg: #332B1E;
+  --block-border: #4A3C28;
+}
+
+.dark .block-daily_routine {
+  --block-accent: #34D399;
+  --block-bg: #1C3029;
+  --block-border: #28463A;
+}
